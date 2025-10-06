@@ -1,31 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Program Kasir Sederhana</title>
+</head>
+<body>
+<h2>Program Kasir Sederhana</h2>
+
+<form method="post">
+    <label>Pilih Menu:</label><br>
+    <select name="menu">
+        <option value="15000">Geprekin Aja - Rp 15.000</option>
+        <option value="12000">Mie Ayam - Rp 12.000</option>
+        <option value="5000">Es Teh - Rp 5.000</option>
+    </select>
+    <br><br>
+
+    <label>Jumlah Beli:</label><br>
+    <input type="number" name="jumlah" min="1" value="1" required>
+    <br><br>
+
+    <input type="submit" name="tambah" value="Tambah ke Keranjang">
+    <input type="submit" name="selesai" value="Selesai">
+</form>
+
 <?php
-$total = 0;
-$ulang = "y";
+session_start();
 
-while ($ulang == "y") {
-    echo "Menu:\n";
-    echo "1. Geprekin Aja - 15000\n";
-    echo "2. Mie Ayam - 12000\n";
-    echo "3. Esteh - 5000\n";
-
-    $pilihan = readline("Pilih menu (1-3): ");
-
-    switch ($pilihan) {
-        case 1:
-            $total += 15000;
-            break;
-        case 2:
-            $total += 12000;
-            break;
-        case 3:
-            $total += 5000;
-            break;
-        default:
-            echo "Menu tidak valid!\n";
-    }
-
-    $ulang = readline("Apakah ingin beli lagi? (y/n): ");
+if (!isset($_SESSION['keranjang'])) {
+    $_SESSION['keranjang'] = [];
 }
 
-echo "\nTotal yang harus dibayar: Rp " . $total;
+if (isset($_POST['tambah'])) {
+    $harga = $_POST['menu'];
+    $jumlah = $_POST['jumlah'];
+    $total = $harga * $jumlah;
+    $_SESSION['keranjang'][] = $total;
+    echo "<p>Item berhasil ditambahkan!</p>";
+}
+
+if (isset($_POST['selesai'])) {
+    $grandTotal = array_sum($_SESSION['keranjang']);
+    echo "<h3>Total yang harus dibayar: Rp " . $grandTotal . "</h3>";
+    session_destroy(); // untuk mereset setelah selesai
+}
 ?>
+</body>
+</html>
