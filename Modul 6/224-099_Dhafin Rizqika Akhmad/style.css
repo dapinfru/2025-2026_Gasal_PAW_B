@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 0;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background: #0056b3;
+}
+
+input, select, textarea {
+    width: 250px;
+    padding: 7px;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+textarea {
+    width: 300px;
+    height: 70px;
+}
+
+table {
+    background: white;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 700px;
+}
+
+table th {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+}
+
+table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    max-width: 800px;
+}
