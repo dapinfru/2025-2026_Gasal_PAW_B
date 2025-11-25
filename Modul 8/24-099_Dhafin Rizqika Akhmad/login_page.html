@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Admin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 40px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h2 {
+            color: #2d6da3;
+            margin-bottom: 20px;
+        }
+        .input-box {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        .btn-login {
+            width: 100%;
+            padding: 10px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .btn-login:hover {
+            background-color: #187bcd;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login Admin</h2>
+        <form action="proses_login.php" method="POST">
+            <div class="input-box">
+                <input type="text" name="username" placeholder="Username" required />
+            </div>
+            <div class="input-box">
+                <input type="password" name="password" placeholder="Password" required />
+            </div>
+            <button class="btn-login" type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
